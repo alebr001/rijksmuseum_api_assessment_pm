@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "newman run collections/regression_testing.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export reports/test-report.html --verbose"
-  }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
