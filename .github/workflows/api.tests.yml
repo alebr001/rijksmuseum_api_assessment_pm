@@ -10,15 +10,11 @@ jobs:
     - name: Repository ophalen
       uses: actions/checkout@v3
 
-    - name: Node.js installeren
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+    - name: Dependencies installeren
+      run: npm install
 
-    - name: Installeer Newman en Reporter
-      run: |
-        npm install -g newman
-        npm install -g newman-reporter-htmlextra
+    - name: Toon bestanden voor debugging
+      run: ls -R
 
     - name: Controleer of de collectie en environment bestaan
       run: |
@@ -31,19 +27,16 @@ jobs:
           exit 1
         fi
 
-    - name: API-tests draaien
+    - name: API-tests draaien met Newman
       run: |
-        newman run collections/regression_testing.postman_collection.json \
+        npx newman run collections/regression_testing.postman_collection.json \
           -e environments/rijks.postman_environment.json \
-          --env-var "key=${{ secrets.KEY }}" \
-          -r htmlextra \
+          --env-var "key=${{ secrets.API_KEY }}" \
+          -r cli,htmlextra \
           --reporter-htmlextra-export reports/test-report.html \
           --verbose
 
-    - name: Newman API-tests uitvoeren
-      run: npm run test
-
-    - name: Rapport uploaden
+    - name: Upload rapport
       uses: actions/upload-artifact@v3
       with:
         name: newman-report
