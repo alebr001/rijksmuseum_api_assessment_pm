@@ -18,6 +18,9 @@ jobs:
     - name: Dependencies installeren 
       run: npm install
 
+    - name: Toon alle bestanden
+      run: ls -R
+
     - name: Newman API-tests uitvoeren
       run: npm run test
 
