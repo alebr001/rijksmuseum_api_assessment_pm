@@ -37,6 +37,7 @@ jobs:
           --verbose
 
     - name: Upload rapport
+      if: always()
       uses: actions/upload-artifact@v3
       with:
         name: newman-report
