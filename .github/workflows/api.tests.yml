@@ -15,8 +15,10 @@ jobs:
       with:
         node-version: '18'
 
-    - name: Dependencies installeren 
-      run: npm ci
+    - name: Installeer Newman en Reporter
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-htmlextra
 
     - name: API-tests draaien met API Key
       run: |
