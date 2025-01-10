@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "newman run collections/Regression\\ Testing.postman_collection.json -r htmlextra --reporter-htmlextra-export reports/test-report.html"
+    "test": "newman run collections/regression_testing.postman_collection.json -r htmlextra --reporter-htmlextra-export reports/test-report.html"
   },
   "keywords": [],
   "author": "",
