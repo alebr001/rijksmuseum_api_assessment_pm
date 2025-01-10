@@ -1,0 +1,17 @@
+{
+  "name": "rijksmuseum_api_assessment_pm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run collections/Regression\\ Testing.postman_collection.json -r htmlextra --reporter-htmlextra-export reports/test-report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "devDependencies": {
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}

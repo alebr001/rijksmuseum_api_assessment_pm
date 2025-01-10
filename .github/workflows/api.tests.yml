@@ -1,0 +1,28 @@
+name: API Tests
+
+on: [push, pull_request]
+
+jobs:
+  run-api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Repository ophalen
+      uses: actions/checkout@v3
+
+    - name: Node.js installeren
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Dependencies installeren 
+      run: npm install
+
+    - name: Newman API-tests uitvoeren
+      run: npm run test
+
+    - name: Rapport uploaden
+      uses: actions/upload-artifact@v3
+      with:
+        name: newman-report
+        path: reports/test-report.html

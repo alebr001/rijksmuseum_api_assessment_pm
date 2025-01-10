@@ -1,0 +1,12 @@
+# OS-specific
+*.DS_Store
+
+# Reports
+reports/test-report.html
+
+# Modules
+node_modules/
+
+# Logs
+logs
+*.log
