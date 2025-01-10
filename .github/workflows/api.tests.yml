@@ -31,7 +31,7 @@ jobs:
       run: |
         npx newman run collections/regression_testing.postman_collection.json \
           -e environments/rijks.postman_environment.json \
-          --env-var "key=${{ secrets.API_KEY }}" \
+          --env-var "key=${{ secrets.KEY }}" \
           -r cli,htmlextra \
           --reporter-htmlextra-export reports/test-report.html \
           --verbose
