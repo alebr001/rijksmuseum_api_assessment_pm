@@ -18,8 +18,13 @@ jobs:
     - name: Dependencies installeren 
       run: npm install
 
-    - name: Toon alle bestanden
-      run: ls -R
+    - name: API-tests draaien met API Key
+      run: |
+        newman run collections/regression_testing.postman_collection.json \
+          -e environments/dev.postman_environment.json \
+          --env-var "key=${{ secrets.KEY }}" \
+          -r htmlextra \
+          --reporter-htmlextra-export reports/test-report.html
 
     - name: Newman API-tests uitvoeren
       run: npm run test
