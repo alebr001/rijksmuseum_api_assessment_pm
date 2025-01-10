@@ -16,7 +16,7 @@ jobs:
         node-version: '18'
 
     - name: Dependencies installeren 
-      run: npm install
+      run: npm ci
 
     - name: API-tests draaien met API Key
       run: |
