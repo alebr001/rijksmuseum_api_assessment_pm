@@ -80,10 +80,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: allure-history
-        path: reports/allure-report/history
+        path: reports/allure-history
 
     - name: Deploy Allure Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: reports/allure-report
+        publish_dir: allure-report
