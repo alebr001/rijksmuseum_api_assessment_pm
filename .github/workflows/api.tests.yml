@@ -60,6 +60,7 @@ jobs:
       with:
         name: allure-results-artifact
         path: reports
+ 
     - name: Combine Allure Results
       run: |
         mkdir -p reports/allure-results
@@ -69,8 +70,8 @@ jobs:
     - name: Generate and Publish Allure Report
       uses: simple-elf/allure-report-action@v1.7
       with:
-        allure-results: results/allure-results
-        allure-history: results/allure-history
+        allure-results: reports/sallure-results
+        allure-history: reports/allure-history
         keep-reports: 10
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -84,5 +85,5 @@ jobs:
     - name: Deploy Allure Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHB_TOKEN }}
-        publish_dir: ./allure-report
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: reports/allure-report
