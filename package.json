@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "newman run collections/regression_testing.postman_collection.json -r cli,allure --reporter-allure-export reports/allure-restults --verbose"
+    "test": "newman run collections/regression_testing.postman_collection.json -r cli,allure --reporter-allure-export reports/allure-results --verbose"
   },
   "keywords": [],
   "author": "",
