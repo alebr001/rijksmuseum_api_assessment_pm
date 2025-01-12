@@ -68,17 +68,36 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
-    - name: Generate and Publish Allure Report
+    - name: Allure Report action from marketplace
       uses: simple-elf/allure-report-action@master
+      if: always()
+      #id: allure-report
       with:
         allure_results: allure-results
+        #gh_pages: gh-pages
+        #allure_report: allure-report
         allure_history: allure-history
         keep_reports: 20
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Deploy Allure Report to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: allure-history
+    # - name: Generate and Publish Allure Report
+    #   uses: simple-elf/allure-report-action@master
+    #   with:
+    #     allure_results: allure-results
+    #     allure_history: allure-history
+    #     keep_reports: 20
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
+
+    # - name: Deploy Allure Report to GitHub Pages
+    #   uses: peaceiris/actions-gh-pages@v4
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: allure-history
