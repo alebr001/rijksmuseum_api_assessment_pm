@@ -13,6 +13,13 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Download vorige Allure-history
+      if: always()
+      uses: actions/download-artifact@v3
+      with:
+        name: allure-history
+        path: reports/allure-report/history
+
     - name: Scenario-based API-tests with Newman
       run: |
         npx newman run collections/regression_testing.postman_collection.json \
@@ -35,13 +42,22 @@ jobs:
           --folder "data_driven" \
           --verbose
 
+    - name:- name: Upload Allure results
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results-artifact
+        path: reports  
+
   generate-report:
     runs-on: ubuntu-latest
     needs: run-api-tests
     if: always()
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    - name: Download Allure results
+      uses: actions/download-artifact@v3
+      with:
+        name: allure-results-artifact
+        path: reports
     - name: Combine Allure Results
       run: |
         mkdir -p reports/allure-results
@@ -56,6 +72,12 @@ jobs:
         keep-reports: 10
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload nieuwe Allure-history
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-history
+        path: reports/allure-report/history
 
     - name: Deploy Allure Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
