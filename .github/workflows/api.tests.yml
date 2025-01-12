@@ -19,7 +19,7 @@ jobs:
           -e environments/rijks.postman_environment.json \
           --env-var "key=${{ secrets.KEY }}" \
           -r cli,allure \
-          --reporter-allure-export reports/allure-results-1 \
+          --reporter-allure-resultsDir reports/allure-results-1 \
           --folder "scenario_based" \
           --verbose
 
@@ -31,7 +31,7 @@ jobs:
           --env-var "key=${{ secrets.KEY }}" \
           --iteration-data data/formats_testdata.json \
           -r cli,allure \
-          --reporter-allure-export reports/allure-results-2 \
+          --reporter-allure-resultsDir reports/allure-results-2 \
           --folder "data_driven" \
           --verbose
 
