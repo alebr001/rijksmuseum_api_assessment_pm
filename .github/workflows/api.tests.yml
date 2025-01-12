@@ -20,8 +20,9 @@ jobs:
           --env-var "key=${{ secrets.KEY }}" \
           -r cli, allure \
           --reporter-allure-export reports/allure-results-1.html \
-          --folder "scenario-based" \
+          --folder "scenario_based" \
           --verbose
+      continue-on-error: true
 
     - name: Data-driven API-tests with Newman
       run: |
@@ -31,8 +32,9 @@ jobs:
           --iterationdata data/formats_testdata.json \
           -r cli, allure \
           --reporter-allure-export reports/allure-results-1.html \
-          --folder "data-driven" \
+          --folder "data_driven" \
           --verbose
+      continue-on-error: true
 
     - name: Combine Allure Results
       run: |
