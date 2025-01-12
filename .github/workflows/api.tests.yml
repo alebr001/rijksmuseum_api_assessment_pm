@@ -97,8 +97,8 @@ jobs:
         PUBLISH_DIR: allure-history
 
     - name: Check of index.html bestaat
-      run: test -f reports/allure-report/index.html && echo "index.html gevonden" || echo "index.html ontbreekt"
-  
+      run: test -f allure-report/index.html && echo "index.html gevonden" || echo "index.html ontbreekt"
+
     # - name: Deploy Allure Report to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
     #   with:
