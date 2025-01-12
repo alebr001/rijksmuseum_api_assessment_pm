@@ -12,6 +12,6 @@
   "description": "",
   "devDependencies": {
     "newman": "^6.2.1",
-    "newman-reporter-allure": "^3.0.8",
+    "newman-reporter-allure": "^3.0.8"
   }
 }
