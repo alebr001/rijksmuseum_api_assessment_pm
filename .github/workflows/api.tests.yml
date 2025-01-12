@@ -29,9 +29,9 @@ jobs:
         npx newman run collections/regression_testing.postman_collection.json \
           -e environments/rijks.postman_environment.json \
           --env-var "key=${{ secrets.KEY }}" \
-          --iterationdata data/formats_testdata.json \
+          --iteration-data data/formats_testdata.json \
           -r cli, allure \
-          --reporter-allure-export reports/allure-results-1.html \
+          --reporter-allure-export reports/allure-results-2.html \
           --folder "data_driven" \
           --verbose
       continue-on-error: true
