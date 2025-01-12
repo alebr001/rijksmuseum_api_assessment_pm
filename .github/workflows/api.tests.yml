@@ -24,6 +24,7 @@ jobs:
           --verbose
 
     - name: Data-driven API-tests with Newman
+      if: always()
       run: |
         npx newman run collections/regression_testing.postman_collection.json \
           -e environments/rijks.postman_environment.json \
@@ -34,6 +35,11 @@ jobs:
           --folder "data_driven" \
           --verbose
 
+  generate-report:
+    runs-on: ubuntu-latest
+    needs: run-api-tests
+    if: always()
+    steps:
     - name: Combine Allure Results
       run: |
         mkdir -p reports/allure-results
