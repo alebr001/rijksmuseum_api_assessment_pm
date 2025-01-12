@@ -67,13 +67,6 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
-    - name: Verify last-history
-      if: always()
-      run: |
-        if [ -d "./gh-pages/last-history" ]; then
-            cp -r ./gh-pages/last-history/. allure-results/history
-        fi
-
     - name: Allure Report action from marketplace
       uses: simple-elf/allure-report-action@master
       if: always()
