@@ -18,7 +18,7 @@ jobs:
         npx newman run collections/regression_testing.postman_collection.json \
           -e environments/rijks.postman_environment.json \
           --env-var "key=${{ secrets.KEY }}" \
-          -r cli, allure \
+          -r cli,allure \
           --reporter-allure-export reports/allure-results-1.html \
           --folder "scenario_based" \
           --verbose
@@ -30,7 +30,7 @@ jobs:
           -e environments/rijks.postman_environment.json \
           --env-var "key=${{ secrets.KEY }}" \
           --iteration-data data/formats_testdata.json \
-          -r cli, allure \
+          -r cli,allure \
           --reporter-allure-export reports/allure-results-2.html \
           --folder "data_driven" \
           --verbose
