@@ -79,15 +79,6 @@ jobs:
         allure_history: allure-history
         keep_reports: 20
 
-    # - name: Generate and Publish Allure Report
-    #   uses: simple-elf/allure-report-action@master
-    #   with:
-    #     allure_results: allure-results
-    #     allure_history: allure-history
-    #     keep_reports: 20
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
@@ -98,9 +89,3 @@ jobs:
 
     - name: Check of index.html bestaat
       run: test -f allure-report/index.html && echo "index.html gevonden" || echo "index.html ontbreekt"
-
-    # - name: Deploy Allure Report to GitHub Pages
-    #   uses: peaceiris/actions-gh-pages@v4
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: allure-history
