@@ -96,16 +96,9 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
-    - name: Post the link to the report
-      if: always()
-      uses: Sibz/github-status-action@v1
-      with: 
-          authToken: ${{secrets.GITHUB_TOKEN}}
-          context: 'Test report'
-          state: 'success'
-          sha: ${{ github.event.pull_request.head.sha }}
-          target_url: alebr001.github.io/rijksmuseum_api_assessment_pm/${{ github.run_number }}
-
+    - name: Check of index.html bestaat
+      run: test -f reports/allure-report/index.html && echo "index.html gevonden" || echo "index.html ontbreekt"
+  
     # - name: Deploy Allure Report to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
     #   with:
