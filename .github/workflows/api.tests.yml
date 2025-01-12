@@ -70,9 +70,9 @@ jobs:
     - name: Generate and Publish Allure Report
       uses: simple-elf/allure-report-action@v1.7
       with:
-        allure-results: reports/sallure-results
-        allure-history: reports/allure-history
-        keep-reports: 10
+        allure_results: reports/allure-results
+        allure_history: reports/allure-history
+        keep_reports: 10
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
