@@ -21,6 +21,7 @@ jobs:
         path: reports/allure-report/history
 
     - name: Scenario-based API-tests with Newman
+      if: always()
       run: |
         npx newman run collections/regression_testing.postman_collection.json \
           -e environments/rijks.postman_environment.json \
@@ -43,6 +44,7 @@ jobs:
           --verbose
 
     - name: Upload Allure results
+      if: always()
       uses: actions/upload-artifact@v3
       with:
         name: allure-results-artifact
