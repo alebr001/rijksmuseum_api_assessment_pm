@@ -22,7 +22,6 @@ jobs:
           --reporter-allure-export reports/allure-results-1 \
           --folder "scenario_based" \
           --verbose
-      continue-on-error: true
 
     - name: Data-driven API-tests with Newman
       run: |
@@ -34,7 +33,6 @@ jobs:
           --reporter-allure-export reports/allure-results-2 \
           --folder "data_driven" \
           --verbose
-      continue-on-error: true
 
     - name: Combine Allure Results
       run: |
@@ -45,8 +43,8 @@ jobs:
     - name: Generate and Publish Allure Report
       uses: simple-elf/allure-report-action@v1.7
       with:
-        allure-results: allure-results
-        allure-history: allure-history
+        allure-results: results/allure-results
+        allure-history: results/allure-history
         keep-reports: 10
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
