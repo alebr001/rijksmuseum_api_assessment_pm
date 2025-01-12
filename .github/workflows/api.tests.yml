@@ -104,7 +104,7 @@ jobs:
           context: 'Test report'
           state: 'success'
           sha: ${{ github.event.pull_request.head.sha }}
-          target_url: simple-elf.github.io/github-allure-history/${{ github.run_number }}
+          target_url: alebr001.github.io/rijksmuseum_api_assessment_pm/${{ github.run_number }}
 
     # - name: Deploy Allure Report to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
