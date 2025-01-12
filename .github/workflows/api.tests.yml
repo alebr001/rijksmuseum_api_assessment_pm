@@ -42,7 +42,7 @@ jobs:
           --folder "data_driven" \
           --verbose
 
-    - name:- name: Upload Allure results
+    - name: Upload Allure results
       uses: actions/upload-artifact@v3
       with:
         name: allure-results-artifact
