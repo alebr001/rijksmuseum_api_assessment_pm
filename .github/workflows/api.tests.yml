@@ -94,7 +94,7 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
+        PUBLISH_DIR: allure-report
 
     - name: Check of index.html bestaat
       run: test -f allure-report/index.html && echo "index.html gevonden" || echo "index.html ontbreekt"
