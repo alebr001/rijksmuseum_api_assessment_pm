@@ -2,7 +2,8 @@
 *.DS_Store
 
 # Reports
-reports/test-report.html
+reports/*
+!reports/placeholder.txt
 
 # Modules
 node_modules/

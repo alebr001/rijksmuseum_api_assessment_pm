@@ -7,38 +7,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Repository ophalen
+    - name: Get Repository
       uses: actions/checkout@v3
 
-    - name: Dependencies installeren
+    - name: Install Dependencies
       run: npm install
 
-    - name: Toon bestanden voor debugging
-      run: ls -R
-
-    - name: Controleer of de collectie en environment bestaan
-      run: |
-        if [ ! -f collections/regression_testing.postman_collection.json ]; then
-          echo "❌ Collection file ontbreekt!"
-          exit 1
-        fi
-        if [ ! -f environments/rijks.postman_environment.json ]; then
-          echo "❌ Environment file ontbreekt!"
-          exit 1
-        fi
-
-    - name: API-tests draaien met Newman
+    - name: Scenario-based API-tests with Newman
       run: |
         npx newman run collections/regression_testing.postman_collection.json \
           -e environments/rijks.postman_environment.json \
           --env-var "key=${{ secrets.KEY }}" \
-          -r cli,htmlextra \
-          --reporter-htmlextra-export reports/test-report.html \
+          -r cli, allure \
+          --reporter-allure-export reports/allure-results-1.html \
+          --folder "scenario-based" \
           --verbose
 
-    - name: Upload rapport
-      if: always()
-      uses: actions/upload-artifact@v3
+    - name: Data-driven API-tests with Newman
+      run: |
+        npx newman run collections/regression_testing.postman_collection.json \
+          -e environments/rijks.postman_environment.json \
+          --env-var "key=${{ secrets.KEY }}" \
+          --iterationdata data/formats_testdata.json \
+          -r cli, allure \
+          --reporter-allure-export reports/allure-results-1.html \
+          --folder "data-driven" \
+          --verbose
+
+    - name: Combine Allure Results
+      run: |
+        mkdir -p reports/allure-results
+        cp -r reports/allure-results-1/* reports/allure-results/
+        cp -r reports/allure-results-2/* reports/allure-results/
+
+    - name: Generate and Publish Allure Report
+      uses: simple-elf/allure-report-action@v1.7
       with:
-        name: newman-report
-        path: reports/test-report.html
+        allure-results: allure-results
+        allure-history: allure-history
+        keep-reports: 10
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Deploy Allure Report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHB_TOKEN }}
+        publish_dir: ./allure-report

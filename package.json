@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "newman run collections/regression_testing.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export reports/test-report.html --verbose"
+    "test": "newman run collections/regression_testing.postman_collection.json -r cli,allure --reporter-allure-export reports/allure-restults --verbose"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,6 @@
   "description": "",
   "devDependencies": {
     "newman": "^6.2.1",
-    "newman-reporter-htmlextra": "^1.23.1"
+    "newman-reporter-allure": "^3.0.8",
   }
 }

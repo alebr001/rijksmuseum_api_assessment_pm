@@ -1,0 +1,14 @@
+[
+  {
+    "format": "json",
+    "contentType": "application/json"
+  },
+  {
+    "format": "jsonp",
+    "contentType": "text/javascript"
+  },
+  {
+    "format": "xml",
+    "contentType": "application/xml"
+  }
+]
