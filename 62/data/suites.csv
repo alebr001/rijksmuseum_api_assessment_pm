@@ -1,0 +1,57 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"This request has a test asserting that certain response headers are present or have an expected value.
+
+You can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","311","Header verification Collection Details","Regression_Testing","Sun Jan 12 18:01:25 GMT 2025","passed","Sun Jan 12 18:01:25 GMT 2025","collection_details","scenario_based","",""
+"This request has a test asserting that certain response headers are present or have an expected value.
+
+You can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","1094","Header verification Collection","Regression_Testing","Sun Jan 12 18:01:23 GMT 2025","passed","Sun Jan 12 18:01:24 GMT 2025","collection","scenario_based","",""
+"This request has a test asserting that certain response headers are present or have an expected value.
+
+You can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","392","Defined formats are accepted Collection Details","Regression_Testing","Sun Jan 12 18:01:28 GMT 2025","passed","Sun Jan 12 18:01:29 GMT 2025","collection_details_dd","data_driven","",""
+"This request has a test asserting that a response is received within a specific time limit (in this case 5 seconds). This is useful for ensuring consistent API performance.
+
+You can access details of the response, such as response time, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","1160","Response time <500 ms verification Collection","Regression_Testing","Sun Jan 12 18:01:22 GMT 2025","failed","Sun Jan 12 18:01:23 GMT 2025","collection","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","156","Status Code 500 Invalid Header Value verification Collection Details","Regression_Testing","Sun Jan 12 18:01:25 GMT 2025","passed","Sun Jan 12 18:01:25 GMT 2025","collection_details","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","2035","Status Code 200 verification Collection","Regression_Testing","Sun Jan 12 18:01:19 GMT 2025","passed","Sun Jan 12 18:01:21 GMT 2025","collection","scenario_based","",""
+"This request has a test asserting that certain response headers are present or have an expected value.
+
+You can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","893","Defined formats are accepted Collection Details","Regression_Testing","Sun Jan 12 18:01:27 GMT 2025","passed","Sun Jan 12 18:01:28 GMT 2025","collection_details_dd","data_driven","",""
+"This request has a test asserting that certain response headers are present or have an expected value.
+
+You can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","346","Result accepts xml Collection Details","Regression_Testing","Sun Jan 12 18:01:25 GMT 2025","passed","Sun Jan 12 18:01:26 GMT 2025","collection_details","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","166","Status code 401 Invalid Key verification Collection Details","Regression_Testing","Sun Jan 12 18:01:24 GMT 2025","passed","Sun Jan 12 18:01:24 GMT 2025","collection_details","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","163","Status Code 404 Invalid Header Value verification Collection","Regression_Testing","Sun Jan 12 18:01:21 GMT 2025","passed","Sun Jan 12 18:01:21 GMT 2025","collection","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","373","Status code 200 verification Collection Details","Regression_Testing","Sun Jan 12 18:01:24 GMT 2025","passed","Sun Jan 12 18:01:24 GMT 2025","collection_details","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","168","Status Code 401 Invalid Key verification Collection","Regression_Testing","Sun Jan 12 18:01:21 GMT 2025","passed","Sun Jan 12 18:01:21 GMT 2025","collection","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","160","Status Code 500 Invalid Header Value verification Collection","Regression_Testing","Sun Jan 12 18:01:21 GMT 2025","passed","Sun Jan 12 18:01:22 GMT 2025","collection","scenario_based","",""
+"This request has a test asserting that certain response headers are present or have an expected value.
+
+You can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","334","Result accepts jsonp Collection Details","Regression_Testing","Sun Jan 12 18:01:26 GMT 2025","passed","Sun Jan 12 18:01:26 GMT 2025","collection_details","scenario_based","",""
+"The test on this request asserts that the reponse has a ""200 OK"" status.
+
+You can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an ""Unauthorized"" response.","169","Status Code 404 Invalid Header Value verification Collection","Regression_Testing","Sun Jan 12 18:01:24 GMT 2025","passed","Sun Jan 12 18:01:25 GMT 2025","collection_details","scenario_based","",""
+"This request has a test using Postman's built-in support for JSON Schema verification to ensure that the response data matches the expected shape.
+
+Schema validation can be used to verify your API returns data in the right format, without worrying about the exact values. This might be helpful when testing various inputs for a consistent output format.
+
+Learn more about JSON Schema at [https://json-schema.org](https://json-schema.org/.).","337","JSON schema verification","Regression_Testing","Sun Jan 12 18:01:26 GMT 2025","passed","Sun Jan 12 18:01:26 GMT 2025","collection_details","scenario_based","",""
+"This request has a test asserting that certain response headers are present or have an expected value.
+
+You can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","1363","Defined formats are accepted Collection Details","Regression_Testing","Sun Jan 12 18:01:29 GMT 2025","passed","Sun Jan 12 18:01:30 GMT 2025","collection_details_dd","data_driven","",""
+"This request has a test asserting that a response is received within a specific time limit (in this case 5 seconds). This is useful for ensuring consistent API performance.
+
+You can access details of the response, such as response time, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available.","363","Response time <500ms verification Collection Details","Regression_Testing","Sun Jan 12 18:01:25 GMT 2025","passed","Sun Jan 12 18:01:25 GMT 2025","collection_details","scenario_based","",""
