@@ -56,7 +56,7 @@ jobs:
  
     - name: Combine Allure Results
       run: |
-        mkdir -p reports/allure-results
+        mkdir -p allure-results
         cp -r reports/allure-results-1/* allure-results/
         cp -r reports/allure-results-2/* allure-results/
 
