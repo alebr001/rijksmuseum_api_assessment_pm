@@ -46,7 +46,7 @@ To see the report, navigate to [Github Pages](https://alebr001.github.io/rijksmu
 ## Findings ##
 
 * When using Collection Details without an object-number there is no error message, or functional feedback
-* Malformed format leads to 404
-* Empty format leads to http500 
-* Internal server error does nog have a good error handling (no output)
+* Malformed format leads to http 404 message
+* Empty format leads to http 500 error
+* Internal server error does not give functional error message (no output)
 * When format is jsonp is generates a contenttype of text/javascript while application/javascript is considered best practice. 
