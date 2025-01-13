@@ -22,7 +22,6 @@ To run the test locally import into postman:
 
 Make sure your apikey is filled in and run a specified test from the scenario based folder. If you want to run the data_driven tests, please use a runner tab and upload the json testdata document. 
 
-
 #### Newman #### 
 
 To run the test locally with newman install node.js and use the following command:
@@ -47,5 +46,4 @@ To see the report, navigate to [Github Pages](https://alebr001.github.io/rijksmu
 * Malformed format leads to 404
 * Empty format leads to http500 
 * Internal server error does nog have a good error handling (no output)
-
-When format is jsonp is generates a contenttype of text/javascript
+* When format is jsonp is generates a contenttype of text/javascript while application/javascript is considered best practice. 
