@@ -50,3 +50,4 @@ To see the report, navigate to [Github Pages](https://alebr001.github.io/rijksmu
 * Empty format leads to http 500 error
 * Internal server error does not give functional error message (no output)
 * When format is jsonp is generates a contenttype of text/javascript while application/javascript is considered best practice. 
+* ps < 10.000  is allowed in collection api
