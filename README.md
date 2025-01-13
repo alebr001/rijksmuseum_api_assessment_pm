@@ -4,7 +4,7 @@ Testframework in Postman/Newman to test the [Rijksmuseum Data Services](https://
 
 ## How to run the tests ##
 
-### Environment Variables ###
+### Variables ###
 
 | key      | value                            |
 |----------|----------------------------------|
@@ -12,7 +12,7 @@ Testframework in Postman/Newman to test the [Rijksmuseum Data Services](https://
 | key      |                                  |
 
 
-### Local ### 
+### LOCAL ### 
 
 #### Postman ####
 
@@ -25,18 +25,21 @@ Make sure your apikey is filled in and run a specified test from the scenario ba
 #### Newman #### 
 
 To run the test locally with newman install node.js and use the following command:
-	  npx newman run collections/regression_testing.postman_collection.json \
+```	  
+npx newman run collections/regression_testing.postman_collection.json \
 	    -e environments/rijks.postman_environment.json \
 	    -r cli \
 	    --folder "scenario_based"
+```
+
 
 ### CI/CD ###
 
 To run the pipeline checkout 'main' branch and do an empty commit.
-
+```
 git commit --allow-empty -m "Trigger pipeline"
 git push
-
+```
 To see the report, navigate to [Github Pages](https://alebr001.github.io/rijksmuseum_api_assessment_pm/)
 
 
